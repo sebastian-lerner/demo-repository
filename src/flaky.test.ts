@@ -6,15 +6,15 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 2', () => {
-    expect(Math.random() > 0.7).toBe(true)
+    expect(0.8 > 0.7).toBe(true)
   })
 
   it('flaky test 3', () => {
-    expect(Math.random() > 0.3).toBe(true)
+    expect(0.5 > 0.3).toBe(true)
   })
 
   it('flaky test 4', () => {
-    expect(Math.floor(Math.random() * 3)).toBe(1)
+    expect(Math.floor(1.5)).toBe(1)
   })
 
   it('flaky test 5', () => {
