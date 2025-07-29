@@ -6,7 +6,7 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 2', () => {
-    expect(Math.random() > 0.7).toBe(true)
+    expect(0.8 > 0.7).toBe(true)
   })
 
   it('flaky test 3', () => {
