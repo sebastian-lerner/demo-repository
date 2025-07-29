@@ -2,7 +2,11 @@ import { describe, it, expect } from 'vitest'
 
 describe('Flaky Test Suite', () => {
   it('flaky test 1', () => {
-    expect(Math.random() > 0.5).toBe(true)
+    // Fixed: Replace random assertion with deterministic test
+    const randomValue = Math.random()
+    expect(typeof randomValue).toBe('number')
+    expect(randomValue).toBeGreaterThanOrEqual(0)
+    expect(randomValue).toBeLessThan(1)
   })
 
   it('flaky test 2', () => {
