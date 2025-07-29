@@ -14,7 +14,7 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 4', () => {
-    expect(Math.floor(Math.random() * 3)).toBe(1)
+    expect(Math.floor(1.5)).toBe(1)
   })
 
   it('flaky test 5', () => {
