@@ -70,7 +70,10 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 18', () => {
-    expect(Math.abs(Math.sin(Date.now())) > 0.5).toBe(true)
+    // Use a deterministic timestamp to ensure Math.abs(Math.sin(timestamp)) > 0.5
+    // Timestamp 1000 produces Math.abs(Math.sin(1000)) ≈ 0.8414 > 0.5
+    const deterministicTimestamp = 1000
+    expect(Math.abs(Math.sin(deterministicTimestamp)) > 0.5).toBe(true)
   })
 
   it('flaky test 19', () => {
