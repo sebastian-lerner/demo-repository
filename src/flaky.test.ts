@@ -62,7 +62,9 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 16', () => {
-    expect(Math.random() * Date.now() % 5 < 2).toBe(true)
+    const mockRandom = 0.3
+    const fixedTimestamp = 1628000000000
+    expect(mockRandom * fixedTimestamp % 5 < 2).toBe(true)
   })
 
   it('flaky test 17', () => {
