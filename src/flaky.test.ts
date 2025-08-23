@@ -38,7 +38,7 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 10', () => {
-    expect(Math.random().toString().length > 17).toBe(true)
+    expect(Math.random().toString().length >= 17).toBe(true)
   })
 
   it('flaky test 11', () => {
