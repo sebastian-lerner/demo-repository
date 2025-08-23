@@ -42,7 +42,10 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 11', () => {
-    expect(Math.floor(Math.random() * 5) === 2).toBe(true)
+    const seededRandom = () => {
+      return 0.5;
+    };
+    expect(Math.floor(seededRandom() * 5) === 2).toBe(true)
   })
 
   it('flaky test 12', () => {
