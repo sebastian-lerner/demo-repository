@@ -14,6 +14,7 @@ jobs:
     resource_class: medium
     steps:
       - checkout
+          method: blobless
       
       # Install Claude Code CLI 
       - run:
