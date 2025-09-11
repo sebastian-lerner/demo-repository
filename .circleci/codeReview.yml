@@ -13,8 +13,8 @@ jobs:
       - image: cimg/python:3.11-node
     resource_class: medium
     steps:
-    - checkout:
-        method: blobless
+      - checkout:
+          method: blobless
       
       # Install Claude Code CLI 
       - run:
