@@ -80,17 +80,11 @@ jobs:
             # Verify authentication worked
             gh auth status
             
-      # Run Claude Code for PR review
+      # Create prompt file for Claude
       - run:
-          name: Run Claude Code PR Review
+          name: Create review prompt
           command: |
-            source $BASH_ENV
-            
-            PR_URL="<< pipeline.event.context.github.pr_url >>"
-            echo "PR URL: $PR_URL"
-            
-            # Create a temporary file for the prompt to avoid shell parsing issues
-            cat > /tmp/review_prompt.txt << 'EOF'
+            cat > /tmp/review_prompt.txt \<< 'EOF'
             Please perform a comprehensive code review of this GitHub Pull Request: REPLACE_PR_URL
             
             Focus on these areas:
@@ -129,6 +123,15 @@ jobs:
             Provide detailed feedback using inline comments for specific issues.
             Use top-level comments for general observations or praise.
             EOF
+
+      # Run Claude Code for PR review
+      - run:
+          name: Run Claude Code PR Review
+          command: |
+            source $BASH_ENV
+            
+            PR_URL="<< pipeline.event.context.github.pr_url >>"
+            echo "PR URL: $PR_URL"
             
             # Replace the placeholder with the actual PR URL
             sed -i "s|REPLACE_PR_URL|$PR_URL|g" /tmp/review_prompt.txt
