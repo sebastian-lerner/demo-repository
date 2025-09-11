@@ -136,8 +136,25 @@ jobs:
             # Replace the placeholder with the actual PR URL
             sed -i "s|REPLACE_PR_URL|$PR_URL|g" /tmp/review_prompt.txt
             
-            # Run Claude with the prompt from file
-            claude -p "$(cat /tmp/review_prompt.txt)"
+            # Debug: Check MCP configuration
+            echo "Checking Claude configuration..."
+            ls -la ~/.claude/
+            echo "MCP settings:"
+            cat ~/.claude/settings.json
+            
+            # Test if GitHub MCP server is accessible
+            echo "Testing GitHub MCP server..."
+            npx -y @modelcontextprotocol/server-github --help || echo "GitHub MCP server test failed"
+            
+            # Run Claude with MCP debugging enabled
+            echo "Starting Claude Code review with MCP debugging..."
+            claude --mcp-debug -p "$(cat /tmp/review_prompt.txt)" > /tmp/claude_output.txt 2>&1
+            
+            # Display the results
+            echo "Claude Code review completed. Output:"
+            echo "=================================="
+            cat /tmp/claude_output.txt
+            echo "=================================="
             3. **Performance**
                - Identify potential performance bottlenecks
                - Review database queries for efficiency
