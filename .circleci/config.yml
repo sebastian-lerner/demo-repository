@@ -20,7 +20,8 @@ jobs:
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
+      - checkout:
+          method: blobless
       - run: echo "i'm config.yml " # run the `echo` command
       - run: echo << pipeline.parameters.test >> # print the value of the test parameter
       - run: echo << pipeline.parameters.do_release >>
