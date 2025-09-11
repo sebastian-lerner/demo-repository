@@ -14,7 +14,7 @@ jobs:
     resource_class: medium
     steps:
       - checkout
-       
+      
       # Install Claude Code CLI 
       - run:
           name: Install Claude Code CLI
@@ -62,10 +62,23 @@ jobs:
       - run:
           name: Authenticate GitHub CLI
           command: |
+            # Debug: Check if token exists (without printing it)
+            if [ -z "$GITHUB_PERSONAL_ACCESS_TOKEN" ]; then
+              echo "ERROR: GITHUB_PERSONAL_ACCESS_TOKEN is not set"
+              exit 1
+            else
+              echo "GITHUB_PERSONAL_ACCESS_TOKEN is set (length: ${#GITHUB_PERSONAL_ACCESS_TOKEN})"
+            fi
+            
             # Unset the automatic GITHUB_TOKEN to avoid conflicts
             unset GITHUB_TOKEN
+            
             # Use our personal access token instead
+            echo "Authenticating with GitHub CLI..."
             echo $GITHUB_PERSONAL_ACCESS_TOKEN | gh auth login --with-token
+            
+            # Verify authentication worked
+            gh auth status
             
       # Run Claude Code for PR review
       - run:
@@ -76,8 +89,9 @@ jobs:
             PR_URL="<< pipeline.event.context.github.pr_url >>"
             echo "PR URL: $PR_URL"
             
-            claude -p "
-            Please perform a comprehensive code review of this GitHub Pull Request: $PR_URL
+            # Create a temporary file for the prompt to avoid shell parsing issues
+            cat > /tmp/review_prompt.txt << 'EOF'
+            Please perform a comprehensive code review of this GitHub Pull Request: REPLACE_PR_URL
             
             Focus on these areas:
             
@@ -114,7 +128,13 @@ jobs:
             
             Provide detailed feedback using inline comments for specific issues.
             Use top-level comments for general observations or praise.
-            "
+            EOF
+            
+            # Replace the placeholder with the actual PR URL
+            sed -i "s|REPLACE_PR_URL|$PR_URL|g" /tmp/review_prompt.txt
+            
+            # Run Claude with the prompt from file
+            claude -p "$(cat /tmp/review_prompt.txt)"
             3. **Performance**
                - Identify potential performance bottlenecks
                - Review database queries for efficiency
