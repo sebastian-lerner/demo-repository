@@ -13,7 +13,7 @@ parameters:
     default: 's3yeah'
   testing-hyphen:
     type: string
-    default: "hyphen-ated"
+    default: "hyphen-ated" 
 
 jobs: 
   configyml:
