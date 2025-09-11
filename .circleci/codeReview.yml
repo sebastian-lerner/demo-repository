@@ -3,7 +3,7 @@ version: 2.1
 workflows:
   pr-review-workflow:
     jobs:
-      - pr-review-with-tracking: 
+      - pr-review-with-tracking:
           context: 
             - circleci-agents 
 
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Install Claude Code CLI
           command: |
-            # Use the native installer like the docs recommend 
+            # Use the native installer like the docs recommend
             curl -fsSL https://claude.ai/install.sh | bash
             # Add to PATH for this session
             echo 'export PATH="$HOME/.local/bin:$PATH"' >> $BASH_ENV
@@ -62,6 +62,9 @@ jobs:
       - run:
           name: Authenticate GitHub CLI
           command: |
+            # Unset the automatic GITHUB_TOKEN to avoid conflicts
+            unset GITHUB_TOKEN
+            # Use our personal access token instead
             echo $GITHUB_PERSONAL_ACCESS_TOKEN | gh auth login --with-token
             
       # Run Claude Code for PR review
@@ -69,11 +72,14 @@ jobs:
           name: Run Claude Code PR Review
           command: |
             source $BASH_ENV
-            claude -p "
-            REPO: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
-            PR NUMBER: $CIRCLE_PR_NUMBER
             
-            Perform a comprehensive code review with the following focus areas:
+            PR_URL="<< pipeline.event.context.github.pr_url >>"
+            echo "PR URL: $PR_URL"
+            
+            claude -p "
+            Please perform a comprehensive code review of this GitHub Pull Request: $PR_URL
+            
+            Focus on these areas:
             
             1. **Code Quality**
                - Clean code principles and best practices
@@ -85,6 +91,30 @@ jobs:
                - Validate input sanitization
                - Review authentication/authorization logic
                
+            3. **Performance**
+               - Identify potential performance bottlenecks
+               - Review database queries for efficiency
+               - Check for memory leaks or resource issues
+               
+            4. **Testing**
+               - Verify adequate test coverage
+               - Review test quality and edge cases
+               - Check for missing test scenarios
+               
+            5. **Documentation**
+               - Ensure code is properly documented
+               - Verify README updates for new features
+               - Check API documentation accuracy
+               
+            Use the GitHub MCP server tools to:
+            - Get the PR details and diff
+            - Create inline comments for specific issues
+            - Add a progress tracking comment with checkboxes
+            - Update the tracking comment when complete
+            
+            Provide detailed feedback using inline comments for specific issues.
+            Use top-level comments for general observations or praise.
+            "
             3. **Performance**
                - Identify potential performance bottlenecks
                - Review database queries for efficiency
