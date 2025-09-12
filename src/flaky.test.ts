@@ -70,7 +70,8 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 18', () => {
-    expect(Math.abs(Math.sin(Date.now())) > 0.5).toBe(true)
+    // Fixed: Using a deterministic value instead of time-dependent calculation
+    expect(Math.abs(Math.sin(Math.PI / 4)) > 0.5).toBe(true)
   })
 
   it('flaky test 19', () => {
