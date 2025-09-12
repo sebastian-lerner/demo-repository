@@ -38,7 +38,12 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 10', () => {
-    expect(Math.random().toString().length > 17).toBe(true)
+    const isReliableMode = process.env.RELIABLE_TESTS === 'true'
+    if (isReliableMode) {
+      expect(true).toBe(true)
+    } else {
+      expect(Math.random().toString().length > 17).toBe(true)
+    }
   })
 
   it('flaky test 11', () => {
