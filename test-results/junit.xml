@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="9" failures="0" errors="0" time="6.633604626">
-    <testsuite name="src/example.test.ts" timestamp="2025-06-09T13:18:28.425Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="0.002289875">
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should pass basic arithmetic" time="0.000786292">
+<testsuites name="vitest tests" tests="9" failures="0" errors="0" time="6.616582989">
+    <testsuite name="src/example.test.ts" timestamp="2025-08-27T05:25:36.729Z" hostname="ip-10-0-41-166" tests="3" failures="0" errors="0" skipped="0" time="0.003098067">
+        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should pass basic arithmetic" time="0.000937815">
         </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should handle string operations" time="0.000307083">
+        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should handle string operations" time="0.000258396">
         </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should work with arrays" time="0.000629542">
-        </testcase>
-    </testsuite>
-    <testsuite name="src/medium.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="2.116278209">
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 1" time="0.804584917">
-        </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 2" time="0.602852958">
-        </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 3" time="0.701662042">
+        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should work with arrays" time="0.000997428">
         </testcase>
     </testsuite>
-    <testsuite name="src/slow.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="4.515036542">
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 1" time="2.00446075">
+    <testsuite name="src/medium.test.ts" timestamp="2025-08-27T05:25:36.731Z" hostname="ip-10-0-41-166" tests="3" failures="0" errors="0" skipped="0" time="2.105793406">
+        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 1" time="0.802467659">
         </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 2" time="1.50278525">
+        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 2" time="0.601418821">
         </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 3" time="1.002446">
+        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 3" time="0.700026762">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/slow.test.ts" timestamp="2025-08-27T05:25:36.731Z" hostname="ip-10-0-41-166" tests="3" failures="0" errors="0" skipped="0" time="4.507691516">
+        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 1" time="2.002843868">
+        </testcase>
+        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 2" time="1.502181171">
+        </testcase>
+        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 3" time="1.000652831">
         </testcase>
     </testsuite>
 </testsuites>
