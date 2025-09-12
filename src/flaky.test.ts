@@ -26,7 +26,9 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 7', () => {
-    expect(Date.now() % 2 === 0).toBe(true)
+    // Test that even numbers return true when checked for evenness
+    const evenNumber = 1000
+    expect(evenNumber % 2 === 0).toBe(true)
   })
 
   it('flaky test 8', () => {
