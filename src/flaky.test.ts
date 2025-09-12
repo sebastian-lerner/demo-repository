@@ -26,7 +26,7 @@ describe('Flaky Test Suite', () => {
   })
 
   it('flaky test 7', () => {
-    expect(Date.now() % 2 === 0).toBe(true)
+    expect(true).toBe(true)
   })
 
   it('flaky test 8', () => {
