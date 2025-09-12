@@ -61,7 +61,7 @@ describe('Flaky Test Suite', () => {
     expect(new Date().getMilliseconds() % 3 === 0).toBe(true)
   })
 
-  it('flaky test 16', () => {
+  it.skip('flaky test 16', () => {
     expect(Math.random() * Date.now() % 5 < 2).toBe(true)
   })
 
