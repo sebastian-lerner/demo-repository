@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="9" failures="0" errors="0" time="6.633604626">
-    <testsuite name="src/example.test.ts" timestamp="2025-06-09T13:18:28.425Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="0.002289875">
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should pass basic arithmetic" time="0.000786292">
-        </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should handle string operations" time="0.000307083">
-        </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should work with arrays" time="0.000629542">
-        </testcase>
-    </testsuite>
-    <testsuite name="src/medium.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="2.116278209">
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 1" time="0.804584917">
-        </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 2" time="0.602852958">
-        </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 3" time="0.701662042">
-        </testcase>
-    </testsuite>
-    <testsuite name="src/slow.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="4.515036542">
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 1" time="2.00446075">
-        </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 2" time="1.50278525">
-        </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 3" time="1.002446">
+<testsuites name="vitest tests" tests="1" failures="1" errors="0" time="0.007131822">
+    <testsuite name="src/flaky.test.ts" timestamp="2025-08-28T05:22:01.428Z" hostname="ip-10-0-72-244" tests="1" failures="1" errors="0" skipped="0" time="0.007131822">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 8" time="0.006311518">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/flaky.test.ts:7:24
+            </failure>
         </testcase>
     </testsuite>
 </testsuites>
