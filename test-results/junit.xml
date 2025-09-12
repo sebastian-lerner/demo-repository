@@ -1,27 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="9" failures="0" errors="0" time="6.633604626">
-    <testsuite name="src/example.test.ts" timestamp="2025-06-09T13:18:28.425Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="0.002289875">
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should pass basic arithmetic" time="0.000786292">
+<testsuites name="vitest tests" tests="20" failures="0" errors="0" time="0.002681317">
+    <testsuite name="src/flaky.test.ts" timestamp="2025-08-14T17:40:51.096Z" hostname="4a51d1e32cbb" tests="20" failures="0" errors="0" skipped="19" time="0.002681317">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 1" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should handle string operations" time="0.000307083">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 2" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/example.test.ts" name="Basic Test Suite &gt; should work with arrays" time="0.000629542">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 3" time="0">
+            <skipped/>
         </testcase>
-    </testsuite>
-    <testsuite name="src/medium.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="2.116278209">
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 1" time="0.804584917">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 4" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 2" time="0.602852958">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 5" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/medium.test.ts" name="Medium Speed Test Suite &gt; should be medium test 3" time="0.701662042">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 6" time="0">
+            <skipped/>
         </testcase>
-    </testsuite>
-    <testsuite name="src/slow.test.ts" timestamp="2025-06-09T13:18:28.426Z" hostname="cci-sebastian-9qvtm" tests="3" failures="0" errors="0" skipped="0" time="4.515036542">
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 1" time="2.00446075">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 7" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 2" time="1.50278525">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 8" time="0">
+            <skipped/>
         </testcase>
-        <testcase classname="src/slow.test.ts" name="Slow Test Suite &gt; should be slow test 3" time="1.002446">
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 9" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 10" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 11" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 12" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 13" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 14" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 15" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 16" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 17" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 18" time="0.001348734">
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 19" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="src/flaky.test.ts" name="Flaky Test Suite &gt; flaky test 20" time="0">
+            <skipped/>
         </testcase>
     </testsuite>
 </testsuites>
